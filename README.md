@@ -404,6 +404,14 @@ work-assistant/
 
 ## 实现说明
 
+### 颜色跟随 harness
+
+浮窗的配色全部走 harness 自己的主题变量（`--dsw-alias-bg-base`、`--dsw-alias-label-primary`、
+`--dsw-alias-brand-primary` 等），所以明暗切换和自定义主题都会跟着变，不用自己维护两套色板。
+
+当前是明是暗，优先读 `theme` 服务的 `colorScheme`；拿不到时退回 `prefers-color-scheme`
+媒体查询和 DOM 变化观察。
+
 ### 浮窗为什么是 portal
 
 浮窗挂在 `shell.overlay` 插槽里，但渲染时用 `ReactDOM.createPortal` 挂到
