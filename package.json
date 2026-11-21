@@ -1,0 +1,24 @@
+{
+  "name": "dsh-work-assistant",
+  "version": "0.3.0",
+  "private": true,
+  "description": "工作助手：把口述命令整理成结构化提示词，发送到指定会话执行，并在完成后用声音和横幅提醒。",
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  }
+}
